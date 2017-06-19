@@ -52,12 +52,10 @@ class UserRepository extends \Doctrine\ORM\EntityRepository
         }
 
         $qb = $this->createQueryBuilder('u')
-            // ->select('u')
-            ->addSelect('COUNT (o.id)')
-            //->where('CURRENT_DATE() >= u.registrationDate')
-            ->andWhere('u.deleted IS NULL')
+            ->where('u.deleted IS NULL')
             ->leftJoin('u.observations', 'o')
             ->addSelect('o')
+            ->addSelect('COUNT(o)')
             ->leftJoin('u.articles', 'a')
             ->addSelect('a')
             ->groupBy('u.id');
@@ -66,6 +64,7 @@ class UserRepository extends \Doctrine\ORM\EntityRepository
             $mapping = [
                 'user' => 'u.username',
                 'status' => 'u.roles',
+                'observations' => ?????? // ne sait pas quoi passer 
             ];
 
             $qb->orderBy($mapping[$filtre], $ordreDeTri);

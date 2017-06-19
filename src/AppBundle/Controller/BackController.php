@@ -325,7 +325,7 @@ class BackController extends Controller
             'paramsRoute' => array()
         );
         
-        var_dump($utilisateurs); die;
+        // var_dump($utilisateurs); die;
         return $this->render('back/utilisateursDashboard.html.twig', array(
             'utilisateurs' => $utilisateurs,
             'pagination' => $pagination

@@ -186,8 +186,8 @@ class FrontController extends Controller
     			));
     		// $listObservations = $em->getRepository('AppBundle:Observation')->findObsvervationForOiseau($oiseau);
 
-    		$count = count($listObservations);
-    		return new Response($count);
+    		// $count = count($listObservations);
+    		return new JsonResponse($listObservations);
     		// return new JsonResponse($listObservations);
     	}
 

@@ -65,7 +65,7 @@
                     type : 'POST',
                     data : {oiseauName: this.value},
                     success: function(response){ 
-                    	console.log(response); 
+                    	console.log(JSON.parse(response)); 
                     	// updateLocations(response);
                     	// console.log(locations);
                     	// withDrawMarkers();

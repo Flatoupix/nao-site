@@ -37,6 +37,7 @@ class Observation
     */
     private $oiseau;
 
+
     /**
     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User",inversedBy="observations")
     * @ORM\JoinColumn(nullable=false)
